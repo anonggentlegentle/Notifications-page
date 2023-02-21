@@ -45,4 +45,43 @@ video {
   width: 100%;
 }
 
+.main {
+  background-color: var(--color-white);
+  padding: 2rem 2rem 1rem;
+  border-radius: 1rem;
+  width: min(90%, 80rem);
+  display: flex;
+  flex-direction: column;
+}
+.main__notifs-button-box {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+.main__notif-number {
+  background-color: var(--color-blue);
+  padding: 0.1rem 0.75rem;
+  font-weight: 800;
+  color: var(--color-white);
+  border-radius: 0.5rem;
+}
+
+.heading--1 {
+  color: var(--color-very-dark-blue);
+}
+
+.btn--read {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  color: var(--color-dark-grayish-blue);
+  font-size: 1.6rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn--read:hover {
+  color: var(--color-blue);
+}
+
 /*# sourceMappingURL=style.css.map */
