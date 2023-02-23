@@ -73,16 +73,19 @@ video {
   &__main-content {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    row-gap: 1rem;
   }
 
   &__notifs-box {
     padding: 2rem;
     border-radius: 1rem;
-    background-color: var(--color-very-light-grayish-blue);
 
     display: flex;
     column-gap: 1.5rem;
+
+    &--unread {
+      background-color: var(--color-very-light-grayish-blue);
+    }
   }
 
   &__notifs-box-dp {
