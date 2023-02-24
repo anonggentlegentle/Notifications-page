@@ -79,6 +79,7 @@ video {
   &__notifs-box {
     padding: 2rem;
     border-radius: 1rem;
+    background-color: transparent;
 
     display: flex;
     column-gap: 1.5rem;
@@ -86,11 +87,20 @@ video {
     &--unread {
       background-color: var(--color-very-light-grayish-blue);
     }
+
+    &--message {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      row-gap: 1rem;
+    }
   }
 
   &__notifs-box-dp {
     width: 5rem;
     height: 5rem;
+
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
   }
 
   &__notifs-box-dp-img {
@@ -103,6 +113,17 @@ video {
     flex-direction: column;
     justify-content: center;
     row-gap: 0.5rem;
+
+    grid-row: 1 / 2;
+  }
+
+  &__notifs-message {
+    border: 1px solid var(--color-light-grayish-blue-2);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+
+    grid-row: 2 /3;
+    grid-column: 2/ 3;
   }
 
   &__notifs-text-proper {

@@ -74,15 +74,23 @@ video {
 .main__notifs-box {
   padding: 2rem;
   border-radius: 1rem;
+  background-color: transparent;
   display: flex;
   column-gap: 1.5rem;
 }
 .main__notifs-box--unread {
   background-color: var(--color-very-light-grayish-blue);
 }
+.main__notifs-box--message {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  row-gap: 1rem;
+}
 .main__notifs-box-dp {
   width: 5rem;
   height: 5rem;
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
 .main__notifs-box-dp-img {
   height: 100%;
@@ -93,6 +101,14 @@ video {
   flex-direction: column;
   justify-content: center;
   row-gap: 0.5rem;
+  grid-row: 1/2;
+}
+.main__notifs-message {
+  border: 1px solid var(--color-light-grayish-blue-2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  grid-row: 2/3;
+  grid-column: 2/3;
 }
 .main__notifs-text-proper {
   display: flex;
