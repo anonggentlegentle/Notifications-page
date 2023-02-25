@@ -81,17 +81,14 @@ video {
     border-radius: 1rem;
     background-color: transparent;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 1rem;
     column-gap: 1.5rem;
 
     &--unread {
       background-color: var(--color-very-light-grayish-blue);
-    }
-
-    &--message {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      row-gap: 1rem;
+      cursor: pointer;
     }
   }
 
@@ -107,12 +104,22 @@ video {
     height: 100%;
   }
 
+  &__notifs-box-post-pic {
+    width: 5rem;
+    height: 5rem;
+    margin-left: auto;
+
+    grid-row: 1 / -1;
+    grid-column: 3 / -1;
+  }
+
   &__notifs-text-box {
     color: var(--color-dark-grayish-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
     row-gap: 0.5rem;
+    line-height: 1.2;
 
     grid-row: 1 / 2;
   }
@@ -127,8 +134,7 @@ video {
   }
 
   &__notifs-text-proper {
-    display: flex;
-    column-gap: 0.75rem;
+    position: relative;
 
     &--name {
       &:link,
@@ -137,6 +143,7 @@ video {
         font-weight: 800;
         text-decoration: none;
         transition: all 0.2s;
+        margin-right: 0.5rem;
       }
 
       &:hover,
@@ -152,6 +159,7 @@ video {
         text-decoration: none;
         color: var(--color-dark-grayish-blue);
         transition: all 0.2s;
+        margin-left: 0.5rem;
       }
 
       &:hover,
@@ -162,12 +170,15 @@ video {
   }
 
   &__notifs-unread-dot {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 50%;
+    display: inline-block;
     background-color: var(--color-red);
-
-    align-self: center;
+    position: absolute;
+    margin-left: 1rem;
+    top: 50%;
+    translate: 0 -50%;
   }
 }
 
