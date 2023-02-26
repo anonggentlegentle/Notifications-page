@@ -169,4 +169,8 @@ video {
   color: var(--color-blue);
 }
 
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
