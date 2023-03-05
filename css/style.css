@@ -23,6 +23,11 @@ html {
   font-size: 62.5%;
   color-scheme: dark light;
 }
+@media only screen and (max-width: 31.25em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   min-height: 100vh;
@@ -48,11 +53,19 @@ video {
 .main {
   background-color: var(--color-white);
   padding: 2rem 2rem 1rem;
+  margin: 1rem 0;
   border-radius: 1rem;
   width: min(90%, 70rem);
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .main {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
 }
 .main__notifs-button-box {
   display: flex;
@@ -145,10 +158,8 @@ video {
   border-radius: 50%;
   display: inline-block;
   background-color: var(--color-red);
-  position: absolute;
-  margin-left: 1rem;
-  top: 50%;
-  translate: 0 -50%;
+  margin-left: 0.1rem;
+  vertical-align: middle;
 }
 
 .heading--1 {
