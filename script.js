@@ -12,30 +12,42 @@ let notifCount = 3;
 
 const removeHightlightAndDot = function (e) {
   if (
-    e.target.classList.contains("main__notifs-box--unread" && notifCount > 0)
+    e.target.classList.contains("main__notifs-box--unread") &&
+    notifCount > 0
   ) {
-    e.target.querySelector(".main__notifs-unread-dot").remove();
-    e.target.classList.remove("main__notifs-box--unread");
+    if (e.target.closest(".main__notifs-box--unread")) {
+      e.target
+        .closest(".main__notifs-box--unread")
+        .querySelector(".main__notifs-unread-dot")
+        .remove();
+      e.target
+        .closest(".main__notifs-box--unread")
+        .classList.remove("main__notifs-box--unread");
 
-    notifCount--;
-    notifCountBox.textContent = notifCount;
-  } else if (
-    !e.target.classList.contains("main__notifs-box--unread" && notifCount > 0)
-  ) {
-    e.target
-      .closest(".main__notifs-box--unread")
-      .querySelector(".main__notifs-unread-dot")
-      .remove();
-    e.target
-      .closest(".main__notifs-box--unread")
-      .classList.remove("main__notifs-box--unread");
+      notifCount--;
+      notifCountBox.textContent = notifCount;
+    }
+  } else {
+    if (e.target.closest(".main__notifs-box--unread")) {
+      e.target
+        .closest(".main__notifs-box--unread")
+        .querySelector(".main__notifs-unread-dot")
+        .remove();
+      e.target
+        .closest(".main__notifs-box--unread")
+        .classList.remove("main__notifs-box--unread");
 
-    notifCount--;
-    notifCountBox.textContent = notifCount;
+      notifCount--;
+      notifCountBox.textContent = notifCount;
+    }
+  }
+
+  if (notifCount <= 0) {
+    mainContentBox.removeEventListener("click", removeHightlightAndDot);
   }
 };
 
-btnRead.addEventListener("click", function () {
+btnRead.addEventListener("click", function (e) {
   unreadNotifBoxAll.forEach(function (box) {
     box.classList.remove("main__notifs-box--unread");
   });
@@ -47,6 +59,8 @@ btnRead.addEventListener("click", function () {
   notifCountBox.textContent = 0;
 
   mainContentBox.removeEventListener("click", removeHightlightAndDot);
+
+  e.target.textContent = "Mark all as unread";
 });
 
 mainContentBox.addEventListener("click", removeHightlightAndDot);
