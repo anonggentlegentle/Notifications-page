@@ -59,8 +59,6 @@ btnRead.addEventListener("click", function (e) {
   notifCountBox.textContent = 0;
 
   mainContentBox.removeEventListener("click", removeHightlightAndDot);
-
-  e.target.textContent = "Mark all as unread";
 });
 
 mainContentBox.addEventListener("click", removeHightlightAndDot);
